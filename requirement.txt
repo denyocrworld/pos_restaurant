@@ -1,0 +1,14 @@
+Online Meet 10
+Studi Kasus Aplikasi POS untuk Restaurant
+https://us06web.zoom.us/j/88078867515?pwd=Mm1OcGhaWWpabyt5RHdZNXNXTFNwZz09
+20:15 - Selesai
+- Login by Google
+- Product Management
+- Table Management
+- POS (Point of Sale)
+- Order Management
+- Status Update (Pending, Paid)
+- Table Lock on Order
+- Table Release on Paid
+
+Jika tidak cukup di bahas malam ini, Sisanya dalam bentuk Video ya Gaes!

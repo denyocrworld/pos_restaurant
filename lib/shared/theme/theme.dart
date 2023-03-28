@@ -45,5 +45,8 @@ ThemeData getDefaultTheme() {
         color: Colors.blueGrey[900],
       ),
     ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: primaryColor,
+    ),
   );
 }
