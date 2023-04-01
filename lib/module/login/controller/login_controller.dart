@@ -1,7 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/service/auth_service/auth_service.dart';
 
 class LoginController extends State<LoginView> implements MvcController {
   static late LoginController instance;
@@ -29,6 +27,18 @@ class LoginController extends State<LoginView> implements MvcController {
         email: email,
         password: password,
       );
+      hideLoading();
+      Get.offAll(const MainNavigationView());
+    } on Exception {
+      hideLoading();
+      showInfoDialog("Wrong username or password!");
+    }
+  }
+
+  doGoogleLogin() async {
+    showLoading();
+    try {
+      await AuthService().googleLogin();
       hideLoading();
       Get.offAll(const MainNavigationView());
     } on Exception {

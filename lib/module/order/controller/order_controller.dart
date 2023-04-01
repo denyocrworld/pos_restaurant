@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hyper_ui/service/order_service/order_service.dart';
 import 'package:hyper_ui/state_util.dart';
 import '../view/order_view.dart';
 
@@ -17,4 +18,20 @@ class OrderController extends State<OrderView> implements MvcController {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  updateStatusToPaid({
+    required String orderId,
+    required String tableNumber,
+  }) async {
+    await OrderService().setOrderToPaid(
+      orderId: orderId,
+      tableNumber: tableNumber,
+    );
+  }
+
+  String status = "Pending";
+  updateStatus(newStatus) {
+    status = newStatus;
+    setState(() {});
+  }
 }

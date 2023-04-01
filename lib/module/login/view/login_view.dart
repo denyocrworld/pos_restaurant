@@ -58,6 +58,21 @@ class LoginView extends StatefulWidget {
                           onPressed: () => controller.doLogin(),
                         ),
                       ),
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: 42,
+                        child: ElevatedButton.icon(
+                          icon: const Icon(Icons.login),
+                          label: const Text("Login by Google"),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.red,
+                          ),
+                          onPressed: () => controller.doGoogleLogin(),
+                        ),
+                      ),
                     ],
                   ),
                 ),

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 
@@ -21,6 +22,8 @@ class PosTableView extends StatefulWidget {
               child: StreamBuilder<QuerySnapshot>(
                 stream: FirebaseFirestore.instance
                     .collection("tables")
+                    .where("owner_id",
+                        isEqualTo: FirebaseAuth.instance.currentUser!.uid)
                     .orderBy("order_index")
                     .snapshots(),
                 builder: (context, snapshot) {

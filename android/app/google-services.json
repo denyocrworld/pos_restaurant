@@ -33,6 +33,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733159493613:android:18cd0e7abc897a0fe6a1e4",
+        "android_client_info": {
+          "package_name": "com.example.pos_restaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733159493613-v6j4fo444ruacd9v4ba0f1kf73jrfbga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKoqaRmqtOpB6hl-GLPp7FC7ICjQQywj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733159493613-rorm22eup5vm6l4avi11t6bvc5g6f30o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

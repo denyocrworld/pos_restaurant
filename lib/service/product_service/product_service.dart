@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProductService {
   create({
@@ -9,6 +10,7 @@ class ProductService {
     required String description,
   }) async {
     await FirebaseFirestore.instance.collection("products").add({
+      "owner_id": FirebaseAuth.instance.currentUser!.uid,
       "photo": photo,
       "product_name": productName,
       "price": price,
@@ -26,6 +28,7 @@ class ProductService {
     required String description,
   }) async {
     await FirebaseFirestore.instance.collection("products").doc(id).update({
+      "owner_id": FirebaseAuth.instance.currentUser!.uid,
       "photo": photo,
       "product_name": productName,
       "price": price,

@@ -42,6 +42,16 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
   }
 
   @override
+  void initState() {
+    if (widget.value != null) {
+      var index =
+          widget.items.indexWhere((item) => item["value"] == widget.value);
+      selectedIndex = index;
+    }
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       controller: ScrollController(),
@@ -67,7 +77,12 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                 color: selected ? Colors.black : null,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(item["label"]),
+                  child: Text(
+                    item["label"],
+                    style: TextStyle(
+                      color: selected ? Colors.white : Colors.black,
+                    ),
+                  ),
                 ),
               ),
             );

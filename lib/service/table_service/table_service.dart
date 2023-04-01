@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class TableService {
   create({
@@ -8,6 +9,7 @@ class TableService {
     String? status = "Available",
   }) async {
     await FirebaseFirestore.instance.collection("tables").add({
+      "owner_id": FirebaseAuth.instance.currentUser!.uid,
       "table_number": tableNumber,
       "order_id": orderId,
       "status": status,
@@ -16,7 +18,10 @@ class TableService {
   }
 
   deleteAll() async {
-    var snapshot = await FirebaseFirestore.instance.collection("tables").get();
+    var snapshot = await FirebaseFirestore.instance
+        .collection("tables")
+        .where("owner_id", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+        .get();
     for (var i = 0; i < snapshot.docs.length; i++) {
       await FirebaseFirestore.instance
           .collection("tables")

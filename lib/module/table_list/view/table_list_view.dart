@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 
@@ -33,10 +34,14 @@ class TableListView extends StatefulWidget {
               child: StreamBuilder<QuerySnapshot>(
                 stream: FirebaseFirestore.instance
                     .collection("tables")
+                    .where("owner_id",
+                        isEqualTo: FirebaseAuth.instance.currentUser!.uid)
                     .orderBy("order_index")
                     .snapshots(),
                 builder: (context, snapshot) {
-                  if (snapshot.hasError) return const Text("Error");
+                  if (snapshot.hasError) {
+                    return Text("Error: ${snapshot.error}");
+                  }
                   if (snapshot.data == null) return Container();
                   if (snapshot.data!.docs.isEmpty) {
                     return const Text("No Data");

@@ -81,7 +81,7 @@ class PosOrderController extends State<PosOrderView> implements MvcController {
     await OrderService().create(
       tableNumber: widget.tableNumber,
       items: productList,
-      total: 0,
+      total: total,
       paymentMethod: "Cash",
       status: "Pending",
     );
