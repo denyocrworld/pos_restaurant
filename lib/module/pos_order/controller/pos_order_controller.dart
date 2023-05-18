@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/service/order_service/order_service.dart';
 
 class PosOrderController extends State<PosOrderView> implements MvcController {
   static late PosOrderController instance;

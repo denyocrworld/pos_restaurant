@@ -26,9 +26,9 @@ class ItemDismissible extends StatelessWidget {
           builder: (BuildContext context) {
             return AlertDialog(
               title: const Text('Confirm'),
-              content: SingleChildScrollView(
+              content: const SingleChildScrollView(
                 child: ListBody(
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text('Are you sure you want to delete this item?'),
                   ],
                 ),

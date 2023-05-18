@@ -29,6 +29,7 @@ export 'package:hyper_ui/module/table_list/view/table_list_view.dart';
 export 'package:hyper_ui/service/auth_service/auth_service.dart';
 export 'package:hyper_ui/service/dummy_service/dummy_service.dart';
 export 'package:hyper_ui/service/main_storage_service/main_storage.dart';
+export 'package:hyper_ui/service/order_service/order_service.dart';
 export 'package:hyper_ui/service/product_service/product_service.dart';
 export 'package:hyper_ui/service/table_service/table_service.dart';
 export 'package:hyper_ui/shared/theme/theme.dart';
